@@ -41,11 +41,16 @@ export default function GameEngine() {
 
   //Effects to switch the player and check for a win
   useEffect(() => {
+    // check for a win
     const gameWonCheck = checkWinner(gameMoves);
     if (gameWonCheck) {
       setGameWon(true);
       return;
     }
+    // if game is full, restart
+    if (gameMoves.every((e) => e !== "?")) resetGame();
+
+    //finally, do the next turn
     const nextTurn = currentTurn === "⭕" ? "❌" : "⭕";
     setCurrentTurn(nextTurn);
   }, [gameMoves]);
