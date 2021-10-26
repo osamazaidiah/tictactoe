@@ -1,2 +1,2 @@
 # tictactoe
-Created with CodeSandbox
+A simple tic-tac-toe game 🥰
